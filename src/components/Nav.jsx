@@ -78,6 +78,7 @@ const Div = styled.div`
     justify-content: end;
     margin-bottom: 30px;
    }
+   jni
   
    .Feacture{
      display:flex;
