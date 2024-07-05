@@ -12,9 +12,8 @@ import CSSRulePlugin from 'gsap/CSSRulePlugin';
 const Nav = () => {
 
   gsap.registerPlugin(scrollTrigger)
-  const hoverEffect = gsap.timeline()
 
-  const NavButtonBefore = CSSRulePlugin.getRule('h5::after');
+  const timeline = gsap.timeline()
 
   useGSAP(()=>{
     gsap.to('.MainNav',{
@@ -26,17 +25,11 @@ const Nav = () => {
         end: 5
       }
     })
-
-    // hoverEffect.to(NavButtonBefore,{
-    //   duration: 0.5,
-    //   cssRule:{
-    //     color: "yellow"
-    //   }
-    // })
   })
 
   return (
     <Div >
+      <div className="box"></div>
       <div className="MiniNav">
         <div className="Feacture">
           <h5>STORES</h5>
@@ -54,7 +47,7 @@ const Nav = () => {
           <button>events</button>
         </div>
         <div className="searchField">
-          <button>Search <IoIosSearch/></button>
+          <button >Search <IoIosSearch/></button>
         </div>
         <div className="MainNavEndPart">
           <div className='something'>
@@ -76,9 +69,12 @@ const Div = styled.div`
    .MiniNav{
     display: flex;
     justify-content: end;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
    }
-   jni
+
+   .box{
+    position: absolute;
+   }
   
    .Feacture{
      display:flex;
@@ -86,10 +82,30 @@ const Div = styled.div`
      padding: 10px 50px 0 0;
    }
 
-  h5{
+  .Feacture h5{
+    position: relative;
+    cursor: pointer;
     font-family: FontAG_Regular;
     font-weight: normal;
     font-size: 11px;
+  }
+
+  .Feacture h5::after{
+    position: absolute;
+    content: '';
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    transition: transform .5s ease;
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+
+  .Feacture h5:hover::after{
+    transform: scaleX(1);
+    border-width: 2px;
+    transform-origin: left;
   }
 
   .MainNav{
@@ -99,6 +115,7 @@ const Div = styled.div`
     width: 100%;
     padding: 10px 50px 10px 30px;
     background: white;
+    z-index: 99;
     border-bottom: 0px solid lightgray;
   }
 
@@ -139,37 +156,52 @@ const Div = styled.div`
     text-transform: uppercase;
     font-weight: 500;
     font-size: large;
+    width: fit-content;
+    cursor: pointer;
   }
 
-  .Feacture h5{
-    position: relative;
-  }
-
-  .Feacture h5::after{
+  .Navigation button::before{
     position: absolute;
-    content: '';
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    border-bottom: 1px solid red;
-  }
-
-  .Feacture h5.hoverIn::after{
-    transform: translateX(0%);
-  }
-
-  .Feacture h5.hoverOut::after{
-    transform: translateX(-100%);
+    content:"";
+    top: -301%;
+    width: 80%;
+    border-bottom: 0px solid red;
+    transition: all .5s;
   }
 
   .searchField button{
     display: flex;
     align-items: center;
+    position: relative;
     gap: 150px;
     text-transform: uppercase;
     padding: 8px;
     border-radius: 4px;
+    overflow: hidden;
+    color: black;
   }
+
+  /* .searchField button::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    border-radius: 4px;
+    height: 100%;
+    left: 0;
+    background: black;
+    transform: translateY(100%);
+    transition: all .5s;
+    z-index: -1;
+  }
+
+  .searchField button:hover::after{
+    transform: translateY(0%);
+  }
+
+  .searchField button:hover{
+    background: none;
+    color: white;
+  } */
 
   .MainNavEndPart{
     display: flex;
