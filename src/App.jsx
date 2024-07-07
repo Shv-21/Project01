@@ -12,6 +12,10 @@ import FontNG_Nor from '../public/Font/NeubauGrotesk_Nor.woff2'
 import Hero from './components/Hero';
 import Products from './components/Products';
 import BestSellers from './components/BestSellers';
+import Experience from './components/Experience';
+import Collection from './components/Collection';
+import HighLight from './components/HighLight';
+import Findyourbike from './components/Findyourbike';
 
 function App() {
 
@@ -22,6 +26,10 @@ const Router = createBrowserRouter([{
              <Hero/>
              <Products/>
              <BestSellers/>
+             <Experience/>
+             <Collection/>
+             <HighLight/>
+             <Findyourbike/>
            </div>
 }])
 
