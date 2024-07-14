@@ -29,7 +29,6 @@ const Nav = () => {
 
   return (
     <Div >
-      <div className="box"></div>
       <div className="MiniNav">
         <div className="Feacture">
           <h5>STORES</h5>
@@ -47,14 +46,14 @@ const Nav = () => {
           <button>events</button>
         </div>
         <div className="searchField">
-          <button >Search <IoIosSearch/></button>
+          <button ><span className='buttoninnertext'>Search</span> <IoIosSearch/></button>
         </div>
-        <div className="MainNavEndPart">
-          <div className='something'>
+        <div className="icon">
+          <div className='calender'>
             <div className="dot"></div>
             <TbCalendarEvent/>
           </div>
-          <div className='something'>
+          <div className='cart'>
             <div className="dot"></div>
             <RiShoppingBagLine/>
           </div>
@@ -66,16 +65,14 @@ const Nav = () => {
 
 const Div = styled.div`
 
+ /* MiniNav */
+
    .MiniNav{
     display: flex;
     justify-content: end;
     margin-bottom: 50px;
    }
 
-   .box{
-    position: absolute;
-   }
-  
    .Feacture{
      display:flex;
      gap: 40px;
@@ -108,6 +105,8 @@ const Div = styled.div`
     transform-origin: left;
   }
 
+  /* MainNav */
+
   .MainNav{
     display: flex;
     align-items: center;
@@ -119,13 +118,13 @@ const Div = styled.div`
     border-bottom: 0px solid lightgray;
   }
 
+  /* logo */
+
   .MainNav img{
     width: 130px;
   }
 
-  input{
-    font-family: FontAG_Regular;
-  }
+  /* Navigation */
 
   .Navigation{
     display: flex;
@@ -134,11 +133,14 @@ const Div = styled.div`
     margin-left: 80px;
   }
 
+  /* searchButton */
+
   .searchField{
     margin-left: 300px;
   }
 
-  .MainNavEndPart{
+
+  .icon{
     margin-left: 150px;
   }
 
@@ -181,34 +183,12 @@ const Div = styled.div`
     color: black;
   }
 
-  /* .searchField button::after{
-    position: absolute;
-    content: "";
-    width: 100%;
-    border-radius: 4px;
-    height: 100%;
-    left: 0;
-    background: black;
-    transform: translateY(100%);
-    transition: all .5s;
-    z-index: -1;
-  }
-
-  .searchField button:hover::after{
-    transform: translateY(0%);
-  }
-
-  .searchField button:hover{
-    background: none;
-    color: white;
-  } */
-
-  .MainNavEndPart{
+  .icon{
     display: flex;
     gap: 10px;
   }
 
-  .MainNavEndPart .something{
+  .icon :is(.calender, .cart){
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,8 +199,39 @@ const Div = styled.div`
     border-radius: 50%;
   }
 
-  .MainNavEndPart .dot{
+  .icon .dot{
     position: absolute;
+  }
+
+  @media (max-width:321px) {
+    .MiniNav, .Navigation, .buttoninnertext{
+      display: none;
+    }
+
+    .Navigation{
+      position: absolute;
+      flex-direction:column;
+    }
+
+    .searchField, .icon{
+      margin: unset;
+    }
+    
+    .searchField button{
+      content: "";
+      border-radius: 50%;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .searchField svg{
+      scale: 1.1;
+    }
+
+    .icon :is(.calender, .cart), .searchField button{
+      width : 30px;
+      height: 30px;
+    }
   }
 `
 

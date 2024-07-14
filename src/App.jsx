@@ -16,6 +16,8 @@ import Experience from './components/Experience';
 import Collection from './components/Collection';
 import HighLight from './components/HighLight';
 import Findyourbike from './components/Findyourbike';
+import Service from './components/Service';
+import Statistic from './components/Statistic';
 
 function App() {
 
@@ -30,6 +32,8 @@ const Router = createBrowserRouter([{
              <Collection/>
              <HighLight/>
              <Findyourbike/>
+             <Service/>
+             <Statistic/>
            </div>
 }])
 

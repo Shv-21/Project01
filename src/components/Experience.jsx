@@ -11,16 +11,13 @@ const Experience = () => {
        <h1>experience</h1>
       </div>
       <div className="textFragment01">
-        <p>service quality is a</p>
-        <p>matter of honor</p>
+        <p>service quality is a matter of honor.</p>
       </div>
       <div className="textFragment02">
-        <p>your specialist shop for bicycles</p> 
-        <p>and e-bikes in hosbach</p>
+        <p>your specialist shop for bicycles and e-bikes in hosbach.</p>
       </div>
       <div className="textFragment03">
-        <p>yout journey</p>
-        <p>begins here</p>
+        <p>your journey begins here.</p>
       </div>
       <div className="whatWeOffer">
         <div className="Description">
@@ -86,8 +83,7 @@ margin-top: 140px;
   /* large text */
 
   .largeText_container{
-    width: fit-content;
-    transform: translate(42%, 33%);
+    width: 100%;
   }
 
   h1{
@@ -100,40 +96,45 @@ margin-top: 140px;
   }
 
   h1:nth-child(1){
-     transform: translateX(30%);
+     transform: translate(125%, 100%) ;
   }
 
   h1:nth-child(2){
-    transform: translateX(-35%);
+    transform: translate(22%, 100%);
   }
 
   h1:nth-child(3){
-    transform: translateX(-6%);
+    transform: translate(37%, 100%);
   }
 
 /* text fragments */
 
    .textFragment01, .textFragment02, .textFragment03{
-    color: white;
+     color: white;
      font-size: x-small;
      font-family: FontNG_Hel;
      text-transform: uppercase;
      position: absolute;
+     text-align: justify;
+     text-align-last: justify;
    }
 
   .textFragment01{
     top: 24%;
     right: 19%;
+    width: 110px;
   }
  
   .textFragment02{
     top: 31%;
     right: 2%;
+    width: 180px;
   }
 
   .textFragment03{
     top: 49%;
     left: 3%;
+    width: 80px;
   }
 
   /* what we offer */

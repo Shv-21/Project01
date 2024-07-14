@@ -13,16 +13,13 @@ const Findyourbike = () => {
        <img className="image" src={Image} alt="" />
       </div>
       <div className="textFragment01">
-        <p>service quality is a</p>
-        <p>matter of honor</p>
+        <div>service quality is a matter of honor</div>
       </div>
       <div className="textFragment02">
-        <p>your specialist shop for bicycles</p> 
-        <p>and e-bikes in hosbach</p>
+        <div>your shop for bikes and e-bikes in hosbach</div>
       </div>
       <div className="textFragment03">
-        <p>yout journey</p>
-        <p>begins here</p>
+        <div>yout journey begins here</div>
       </div>
       <div className="largeText01 largeText">find</div>
       <div className="largeText02 largeText">your</div>
@@ -55,92 +52,108 @@ const Findyourbike = () => {
 }
 
 const Div = styled.div`
+
    display: flex;
    flex-direction: column;
    align-items: center;
    margin-top: 7%;
    position:relative; 
    
-   .imageEffect svg{
+  /* imageEffect */
+
+  .imageEffect svg{
     width: 831px;
     height: 971px;
     color: #e8e5e5; 
-   }
+  }
 
-   .imageEffect{
-    position: relative;
-   }
+  .imageEffect{
+   position: relative;
+  }
 
-   .image{
-    position: absolute;
-    top: 10%;
-    width:80%;
-    object-fit:cover; 
-    height:80%; 
-    left: 10%;
-   }
+  .image{
+   position: absolute;
+   top: 10%;
+   width:80%;
+   object-fit:cover; 
+   height:80%; 
+   left: 10%;
+  }
 
    /* largeText */
 
-   .largeText{
-     color: black;
-     font-size: 175px;
-     font-family: FontAG_Extrabold;
-     text-transform: uppercase;
-     position: absolute;
-   }
+  .largeText{
+    color: black;
+    font-size: 175px;
+    font-family: FontAG_Extrabold;
+    text-transform: uppercase;
+    position: absolute;
+  }
 
-   .largeText01{
-    top: -4%;
-    left: 3%;
-   }
+  .largeText01{
+   top: -4%;
+   left: 3%;
+  }
 
-   .largeText02{
-    top: 10.5%;
-    left: 11%;
-   }
+  .largeText02{
+   top: 8%;
+   left: 11%;
+  }
 
-   .largeText03{
-    top: 37%;
-    right:2%; 
-   }
+  .largeText03{
+   top: 25%;
+   right:2%; 
+  }
 
    /* textfragments */
 
-   .textFragment01, .textFragment02, .textFragment03{
-     color: black;
-     font-size: x-small;
-     font-family: FontNG_Hel;
-     text-transform: uppercase;
-     position: absolute;
-   }
+
+  .textFragment01 , .textFragment02 , .textFragment03{
+    color: black;
+    font-size: x-small;
+    font-family: FontNG_Hel;
+    text-transform: uppercase;
+    text-align: justify;
+    text-align-last: justify;
+    position: absolute;
+  }
 
   .textFragment01{
     top: 1.5%;
+    width: 115px;
     right: 19%;
   }
  
   .textFragment02{
-    top: 29%;
+    top: 18%;
+    width: 180px;
     right: 2%;
   }
 
   .textFragment03{
-    top: 75%;
+    top: 60%;
+    width: 80px;
     left: 3%;
   }
 
    /* blackBar */
 
-   .blackBar{
+  .blackBar{
     content: "";
     width: 94%;
     height: 35px;
     border-radius: 5px;
     background: black;
     position: absolute;
-    top: 80%;
+    top: 65%;
     left: 3%;
+  }
+
+  /* Findyoutbike_Slogan */
+
+  .Findyoutbike_Slogan{
+    position: absolute;
+    top: 70%;
   }
 
   /* Findyoutbike_Footer */
@@ -148,6 +161,7 @@ const Div = styled.div`
   .Findyoutbike_Footer{
     width: 100%;
     padding: 0 45px;
+    margin-top: 35px;
   }
 
   .Findyoutbike_Footer h2{
@@ -155,8 +169,8 @@ const Div = styled.div`
   }
 
   .Findyoutbike_Footer p{
-     line-height: 1.3cap;
-     font-size: 37px;
+    line-height: 1.3cap;
+    font-size: 37px;
   }
 
   .Findyoutbike_Footer :is(h2,p){
@@ -170,35 +184,31 @@ const Div = styled.div`
     border-bottom: 1px solid black;
   }
 
+  /* passageBlock */
+
+  .passageBlock{
+    width: 100%;
+    border-right: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    justify-content: flex-end;
+  }
+
   .passageBlock p{
     font-family: FontAG_Regular;
     color: #595858;
     font-size: 17px;
     text-transform: capitalize;
-    align-content: flex-end;
-    border-right: 1px solid black
   }
 
-  .passageBlock, .AppointmentBlock{
-     width: 100%;
-     padding: 15px;
-  }
+  /* AppointmentBlock */
 
   .AppointmentBlock{
+    width: 100%;
+    padding: 15px;
     display: flex;
     gap: 15px;
-}
-
-  .AppointmentBlock_Image{
-    border-radius: 3px;
-    width: 350px;
-  }
-
-  .AppointmentBlock_Button{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
   }
 
   .AppointmentBlock button{
@@ -218,6 +228,18 @@ const Div = styled.div`
   .AppointmentBlock button svg{
     scale: 1.4;
   } 
+
+  .AppointmentBlock_Image{
+    border-radius: 3px;
+    width: 350px;
+  }
+
+  .AppointmentBlock_Button{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 
 `
 
