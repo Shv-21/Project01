@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import axios from 'axios';
-import { useEffect } from 'react';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Nav from './components/Nav';
 import FontAG_Regular from '../public/Font/A2RecordGothic_Regular.woff2';
@@ -18,6 +16,7 @@ import HighLight from './components/HighLight';
 import Findyourbike from './components/Findyourbike';
 import Service from './components/Service';
 import Statistic from './components/Statistic';
+import { Footer } from './components/Footer';
 
 function App() {
 
@@ -34,6 +33,7 @@ const Router = createBrowserRouter([{
              <Findyourbike/>
              <Service/>
              <Statistic/>
+             <Footer/>
            </div>
 }])
 
