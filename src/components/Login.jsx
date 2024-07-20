@@ -56,6 +56,7 @@ const Div = styled.div`
         font-family: FontAG_Extrabold;
         width: 100%;
         font-size: 5rem;
+        color: white;
     }
 
     .inputField::after{
@@ -72,6 +73,10 @@ const Div = styled.div`
     input::placeholder{
         color: rgba(255, 255, 255,.4);
         text-transform: uppercase;
+    }
+
+    input:focus{
+      outline: none;
     }
 
     button{

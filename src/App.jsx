@@ -5,8 +5,8 @@ import FontAG_Regular from '../public/Font/A2RecordGothic_Regular.woff2';
 import FontAG_Bold from '../public/Font/A2RecordGothicCondensed_Bold.woff2';
 import FontAg_Medium from '../public/Font/A2RecordGothicCondensed_Medium.woff2';
 import FontAG_Extrabold from'../public/Font/A2RecordGothicXCond_Extrabold.woff2'; 
-import FontNG_Hel from '../public/Font/NeubauGrotesk_Hal.woff2'
-import FontNG_Nor from '../public/Font/NeubauGrotesk_Nor.woff2'
+import FontNG_Hel from '../public/Font/NeubauGrotesk_Hal.woff2';
+import FontNG_Nor from '../public/Font/NeubauGrotesk_Nor.woff2';
 import Hero from './components/Hero';
 import Products from './components/Products';
 import BestSellers from './components/BestSellers';
@@ -64,11 +64,6 @@ const Div = styled.div`
   @font-face {
     font-family: FontAG_Extrabold;
     src: url(${FontAG_Extrabold});
-  }
-
-  @font-face {
-    font-family: FontNG_Hel;
-    src: url(${FontNG_Hel});
   }
 
   @font-face {
