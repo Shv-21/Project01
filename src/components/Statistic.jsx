@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import image from '../../public/Image/4Q5A8906.webp';
+import image from '../../public/Image/stenger-nav-push-1-small.jpg';
 
 const Statistic = () => {
   return (

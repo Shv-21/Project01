@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from '../../public/Image/4Q5A9468.webp';
 import { IoIosArrowRoundForward } from "react-icons/io"; 
-import AppoinmentImage from '../../public/Image/225952.png';
+import AppoinmentImage from '../../public/Image/Bike_STenger0961-tablet.jpg';
 
 const Findyourbike = () => {
   return (

@@ -25,7 +25,7 @@ const Router = createBrowserRouter([{
   element: <div>
              <Nav/>
              <Hero/>
-             <Products/>
+             {/* <Products/>
              <BestSellers/>
              <Experience/>
              <Collection/>
@@ -33,7 +33,7 @@ const Router = createBrowserRouter([{
              <Findyourbike/>
              <Service/>
              <Statistic/>
-             <Footer/>
+             <Footer/> */}
            </div>
 }])
 

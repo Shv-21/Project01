@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import Collection01 from '../../public/Image/4Q5A9021.jpg';
-import Collection02 from '../../public/Image/4Q5A9051.jpg';
+import Collection02 from '../../public/Image/4Q5A9257-desktop.jpg';
 import { IoIosArrowRoundForward } from "react-icons/io"; 
 
 const Collection = () => {

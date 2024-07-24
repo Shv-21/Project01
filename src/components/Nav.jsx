@@ -7,17 +7,19 @@ import { RiShoppingBagLine } from "react-icons/ri";
 import gsap from 'gsap';
 import  scrollTrigger  from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import CSSRulePlugin from 'gsap/CSSRulePlugin';
+import { useState } from 'react';
+import { BiSolidMessageSquare } from "react-icons/bi";
+import { useEffect } from 'react';
 
 const Nav = () => {
 
   gsap.registerPlugin(scrollTrigger)
-
-  const timeline = gsap.timeline()
-
+  const timeline = gsap.timeline();
+  let active = true;
   useGSAP(()=>{
     gsap.to('.MainNav',{
       top:0,
+      paddingBottom:"1rem",
       borderBottomWidth: 1,
       scrollTrigger:{
         scrub: true,
@@ -25,8 +27,23 @@ const Nav = () => {
         end: 5
       }
     })
-  })
+    timeline.to('.menuline', {
+      left: "100%",
+      duration: .2,
+      stagger: .1,
+      ease:"none"
+    }).pause();
 
+    timeline.to('.crossline', {
+      width: "100%",
+      backgroundColor: "red",
+      stagger: .1,
+      duration: .1 ,
+      ease:"none"
+    }).pause();
+
+  });
+    
   return (
     <Div >
       <div className="MiniNav">
@@ -37,25 +54,56 @@ const Nav = () => {
         </div>
       </div>
       <div className="MainNav">
-        <img src={Logo} onClick={()=>{window.location.reload()}} alt="" />
+        <div className="Menu" onClick={()=>{if (active) { timeline.play();} else {timeline.reverse(); };active = !active; document.querySelector('.MainNav').classList.toggle("active")}} >
+           <div className="hamburger">
+             <div className="menulineouter">
+              <div className="menuline"></div>
+             </div>
+             <div className="menulineouter">
+              <div className="menuline"></div>
+             </div>
+             <div className="menulineouter">
+              <div className="menuline"></div>
+             </div>
+           </div>
+           <div className="crossmark">
+            <div className="cross"><div className="crossline"></div></div>
+            <div className="cross"><div className="crossline"></div></div>
+           </div>
+        </div>
+        <img src={Logo}  onClick={()=>{window.location.reload()}} alt="" />
         <div className="Navigation">
           <button>shop<BsPlus/></button>
           <button>Brands<BsPlus/></button>
           <button>services<BsPlus/></button>
           <button>about us</button>
           <button>events</button>
-        </div>
-        <div className="searchField">
-          <button ><span className='buttoninnertext'>Search</span> <IoIosSearch/></button>
-        </div>
-        <div className="icon">
-          <div className='calender'>
-            <div className="dot"></div>
-            <TbCalendarEvent/>
+          <div className="Navigationfooter">
+            <div className='navAppointment' ><h5>book an appointment </h5><BiSolidMessageSquare/></div>
+            <ul>
+              <li>stores</li>
+              <li>blog</li>
+              <li>login</li>
+              <li>register</li>
+            </ul>
           </div>
-          <div className='cart'>
-            <div className="dot"></div>
-            <RiShoppingBagLine/>
+        </div>
+        <div className="MainNav_rightSide">
+          <div className="searchField">
+            <button >
+              <span className='buttoninnertext'>Search</span> 
+              <IoIosSearch/>
+            </button>
+          </div>
+          <div className="icon">
+            <div className='calender'>
+              <div className="dot"></div>
+              <TbCalendarEvent/>
+            </div>
+            <div className='cart'>
+              <div className="dot"></div>
+              <RiShoppingBagLine/>
+            </div>
           </div>
         </div>
       </div>
@@ -68,15 +116,15 @@ const Div = styled.div`
  /* MiniNav */
 
    .MiniNav{
-    display: flex;
-    justify-content: end;
-    margin-bottom: 50px;
+     display: flex;
+     justify-content: end;
+     margin-bottom: 3.4vw;
    }
 
    .Feacture{
      display:flex;
-     gap: 40px;
-     padding: 10px 50px 0 0;
+     gap: 2.5vw;
+     padding: .7vw 3.3vw 0 0;
    }
 
   .Feacture h5{
@@ -84,13 +132,13 @@ const Div = styled.div`
     cursor: pointer;
     font-family: FontAG_Regular;
     font-weight: normal;
-    font-size: 11px;
+    font-size: .7rem;
   }
 
   .Feacture h5::after{
     position: absolute;
     content: '';
-    bottom: -2px;
+    bottom: .6vw;
     left: 0;
     width: 100%;
     border-bottom: 1px solid gray;
@@ -105,23 +153,34 @@ const Div = styled.div`
     transform-origin: left;
   }
 
+  /* Menu */
+
+  .Menu{
+    display: none;
+  }
+
   /* MainNav */
 
   .MainNav{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     position: fixed;
-    width: 100%;
-    padding: 10px 50px 10px 30px;
-    background: white;
-    z-index: 99;
+    width: 100vw;
+    padding: .6vw 3.3vw 3.3vw 2vw;
+    background: rgb(255, 255, 255);
+    z-index: 2;
     border-bottom: 0px solid lightgray;
   }
 
   /* logo */
 
   .MainNav img{
-    width: 130px;
+    width:8.47vw;
+  }
+
+  .MainNav_rightSide{
+    display: flex;
   }
 
   /* Navigation */
@@ -130,22 +189,21 @@ const Div = styled.div`
     display: flex;
     align-items: center;
     gap: 20px;
-    margin-left: 80px;
+    margin-left: 5.3vw;
   }
 
   /* searchButton */
 
   .searchField{
-    margin-left: 300px;
+    margin-left: 19vw;
   }
 
-
   .icon{
-    margin-left: 150px;
+    margin-left: 9.07vw;
   }
 
   button{
-    font-family: FontAG_Regular;
+    font-family: FontNG_Hel;
   }
 
   .Navigation button{
@@ -175,9 +233,9 @@ const Div = styled.div`
     display: flex;
     align-items: center;
     position: relative;
-    gap: 150px;
+    gap: calc(9.07vw + 1px);
     text-transform: uppercase;
-    padding: 8px;
+    padding: calc(.6vw - 1px) ;
     border-radius: 4px;
     overflow: hidden;
     color: black;
@@ -194,8 +252,8 @@ const Div = styled.div`
     justify-content: center;
     position: relative;
     background: #f1f0f0;
-    width : 40px;
-    height: 40px;
+    width : 2.6vw;
+    height: 2.6vw;
     border-radius: 50%;
   }
 
@@ -203,35 +261,171 @@ const Div = styled.div`
     position: absolute;
   }
 
+  .Navigationfooter{
+    display: none;
+  }
+
   @media (max-width:321px) {
-    .MiniNav, .Navigation, .buttoninnertext{
+
+    .MiniNav{
       display: none;
+    }
+
+    .Menu{
+      display: flex;
+      cursor: pointer;
+      position: relative;
+      width: 30px;
+    }
+
+    .hamburger{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: .1rem;
+    }
+
+    .menulineouter{
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .menuline{
+      content: "";
+      width: 100%;
+      height: 3.1px;
+      position: relative;
+      left: 0;
+      background-color: red;
+    }
+
+    .menulineouter:nth-child(3){
+      width: 50%;
+    }
+
+    .crossmark{
+      position: absolute;
+      width: 100%;
+    }
+
+    .cross:first-child{
+      transform: rotate(45deg) translate(10%, 100%);
+    }
+
+    .cross:last-child{
+      transform: rotate(135deg) translate(5%, 0%);
+    }
+    .crossline{
+      transition: all .5s ease;
+      width: 0%;
+      height: 3px;
+      background-color: white;
+    }
+
+    .MainNav{
+      padding: 2vw 4vw;
+      top: 0;
+    }
+
+    .MainNav img{
+      width: 34vw;
+    }
+
+    .MainNav_rightSide, .icon{
+      gap: 3vw;
     }
 
     .Navigation{
       position: absolute;
-      flex-direction:column;
+      flex-direction: column;
+      gap: 0;
+      width: 92%;
+      top: 100%; 
+      left: -100%;
+      transition: left .5s ease;
+      align-items: flex-start;
+    }
+
+    .Navigation button{
+      font-size: 12vw;
+      border-top: 1px solid black;
+      width: 100%;
+      padding: 0;
+      font-family: FontAG_Extrabold;
+    }
+
+    .Navigation button:last-child{
+      border-bottom: 1px solid black;
+    }
+
+    .Navigationfooter{
+      display: flex;
+      width: 100%;
+      align-items: center;
+      gap: 20vw;
+      flex-direction: column;
+    }
+
+    .Navigationfooter h5{
+      font-weight: 600;
+      font-family: FontAG_Regular;
+      text-transform: uppercase;
+    }
+
+    .Navigationfooter ul{
+      list-style: none;
+      padding: 0;
+      font-size: small;
+      font-family: FontNG_Nor;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    ul li:nth-child(3){
+      margin-top: 10px;
+    }
+
+    .navAppointment{
+      display: flex;
+      width: 100%;
+      padding: 20px 15px;
+      border-radius: 5px;
+      background: lightgrey;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .MainNav.active .Navigation{
+      left: 0%;
     }
 
     .searchField, .icon{
-      margin: unset;
+      margin: 0;
     }
-    
+
+    .searchField span{
+      display: none;
+    }
+
     .searchField button{
-      content: "";
+      padding: 2.6vw;
       border-radius: 50%;
-      justify-content: center;
-      padding: 0;
     }
 
     .searchField svg{
-      scale: 1.1;
+      width: 6vw;
+      height: 6vw;
     }
 
-    .icon :is(.calender, .cart), .searchField button{
-      width : 30px;
-      height: 30px;
+    .icon :is(.calender, .cart){
+      width: 11vw;
+      height: 11vw;
+      background: #f1f0f0;
     }
+
   }
 `
 

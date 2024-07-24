@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import image from '../../public/Image/4Q5A8906.webp';
+import image from '../../public/Image/4Q5A8906-desktop.webp';
 import { IoIosArrowRoundForward } from "react-icons/io"; 
 
 const Service = () => {

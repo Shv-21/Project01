@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import backGroundimg from '../../public/Image/Q5A6130.webp'; 
+import backGroundimg from '../../public/Image/Q5A6130-Desktop.webp'; 
 import helmet from '../../public/Image/Helmet.jpg';
 
 const HighLight = () => {

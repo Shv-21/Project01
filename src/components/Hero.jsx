@@ -1,34 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import HeroBackground from '../../public/Image/HeroBackground.jpg';
+import herodesktop from '../../public/Image/desktop.jpg';
+import heromobile from '../../public/Image/4Q5A9296-tablet.jpg';
 import cycle01 from '../../public//Image/cycle01.png';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
 import { MdCompareArrows } from "react-icons/md";
 
 const Hero = () => {
 
-  // here i want to create a scrolling effect which moves img position in y axis Upward or downward based on scroll direction 
-  useGSAP(()=>{
-    gsap.to('#poster',{
-
-    })
-  })
-
   return (
     <Div>
       <h1>zweirad stenger</h1>
-      <img id='poster' src={HeroBackground} alt="HeroBackground" />
+      <img id='poster' src={herodesktop} alt="HeroBackground" />
       <div className="Recommed">
-        {/* <h1>our</h1> */}
         <div className="Recommed_Poster">
           <div className='Recommed_Poster_content'>
-            <div className='NamePrice'>
-            <div className="Name">S-WORKS TARMAC SL8 - SRAM RED AXS</div>
-            <div className="Price">€ 14,500.00</div>
+            <div className='Nametype'>
+             <div className="Name">S-WORKS TARMAC SL8 - SRAM RED AXS 2024</div>
+             <span>specialized</span>
             </div>
-            <div className="year">2024</div>
-            <span>specialized</span>
+            <div className="Price">€14,500.00</div>
           </div>
          <img id='Recommed_Poster_image' src={cycle01} alt="" />
          <div className="toggleButton">
@@ -43,7 +33,7 @@ const Hero = () => {
 
 const Div = styled.div`
 
-   margin-top: 140px;
+   margin-top: 9.1vw;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -57,7 +47,7 @@ const Div = styled.div`
   .Recommed{
     position: absolute;
     width: 26%;
-    left: 40px;
+    left: 4%;
     top: 30%;
     padding: 14px;
     border-radius: 4px;
@@ -80,8 +70,8 @@ const Div = styled.div`
    
    .Recommed_Poster_content{
      display: flex;
-     flex-direction: column;
-     line-height: 22px;
+     align-items: flex-start;
+     line-height: 4cap;
     }
     
       /* cycle image size and position */
@@ -92,7 +82,7 @@ const Div = styled.div`
      object-fit: contain;
    }
 
-   .Name, .year{
+   .Name{
      font-family:FontAG_Extrabold;
      font-size: x-large;
    }
@@ -101,12 +91,6 @@ const Div = styled.div`
      font-family: FontAG_Regular;
      text-transform: capitalize;
      margin-top: 2px;
-   }
-
-   .NamePrice{
-     display: flex;
-     align-items: center;
-     gap:10px;
    }
 
     /* button */
@@ -123,7 +107,7 @@ const Div = styled.div`
     color: white;
     font-weight: 600;
     border-radius: 5px;
-    height: 50px;
+    height: 3vw;
     font-family: FontNG_Hel;
   }
 
@@ -137,12 +121,11 @@ const Div = styled.div`
   
   h1{
     font-family: FontAG_Extrabold, sans-serif;
-    font-size: 260px;
-    line-height: 190px;
+    font-size: 17vw;
+    line-height: 1cap;
     height: fit-content;
     text-transform: uppercase;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
+    margin: 0;
   }
 
 /* Poster */
@@ -155,5 +138,37 @@ const Div = styled.div`
     height: 50vw;
     border-radius: 2px;
   }
+
+  @media (max-width:321px){
+
+    margin-top: 25vw;
+
+    .Recommed{
+      width: 90%;
+      height: fit-content;
+      display: none;
+      left: 5%;
+    }
+
+    #poster{
+      content: url(${heromobile});
+      width: 100vw;
+      height: 155vw;
+      object-position: 62% 50%;
+    }
+
+    .toggleButton button{
+      display: none;
+    }
+
+    .Recommed_Poster{
+      flex-direction: row-reverse;
+    }
+
+    .Recommed_Poster_content{
+      flex-direction: column;
+    }
+  } 
+
 `
 export default Hero
