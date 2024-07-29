@@ -143,31 +143,49 @@ const Div = styled.div`
 
     margin-top: 25vw;
 
+    h1{
+      font-size: 16vw;
+    }
+
     .Recommed{
       width: 90%;
       height: fit-content;
-      display: none;
+      top: 70%;
       left: 5%;
     }
 
     #poster{
       content: url(${heromobile});
       width: 100vw;
+      margin-top: 5vw;
       height: 155vw;
       object-position: 62% 50%;
     }
 
-    .toggleButton button{
+    .toggleButton{
       display: none;
     }
 
     .Recommed_Poster{
       flex-direction: row-reverse;
+      gap: 15px;
+    }
+
+    #Recommed_Poster_image{
+      border: 1px solid lightgrey;
+      padding-block: 7vw;
+      width: 75%;
     }
 
     .Recommed_Poster_content{
       flex-direction: column;
     }
+
+    .Name{
+      font-size: 20px;
+      line-height: 1.2cap;
+    }
+
   } 
 
 `

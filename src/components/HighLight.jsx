@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import backGroundimg from '../../public/Image/Q5A6130-Desktop.webp'; 
+import BackGroundMobile from '../../public/Image/Q5A6130-Mobile.jpg';
 import helmet from '../../public/Image/Helmet.jpg';
 
 const HighLight = () => {
@@ -34,18 +35,18 @@ const Div = styled.div`
     border-radius: 3px;
 
     .hightLight_Poster{
-        position: absolute;
-        top: 90px;
-        left: 30px;
-        width: 400px;
-        height: 450px;
-        border-radius: 5px;
-        padding: 15px;
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-direction: column;
+      position: absolute;
+      top: 90px;
+      left: 30px;
+      width: 400px;
+      height: 450px;
+      border-radius: 5px;
+      padding: 15px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
     }
 
     .Poster_Detail{
@@ -96,6 +97,57 @@ const Div = styled.div`
         text-transform: uppercase;
         border-radius: 5px;
         font-weight: bold;
+    }
+
+    @media (max-width: 321px){
+      background: url(${BackGroundMobile}) no-repeat;
+      margin-block: 100px;
+      margin-inline: 0;
+      border-radius: unset;
+      background-size: cover;
+      background-position: 50% 0%;
+      height: 145vw;
+
+      .hightLight_Poster{
+        left: 0%;  
+        top: 10%;
+        flex-direction: row-reverse;
+        width: 90%;
+        justify-content: space-around;
+        height: 32.5vw;
+        padding: 15px;
+        margin-inline: 15px;
+        gap: 20px;
+      }
+
+      .Poster_Detail::before{
+        display: none;
+      }
+
+      .hightLight_Poster img{
+        width: fit-content;
+        height: 100%;
+        border: 1px solid rgb(225, 223, 223);
+        border-radius: 2px;
+        object-fit: cover;
+      }
+
+      .Poster_Name{
+        font-size: medium;
+      }
+
+      .Poster_Detail{
+        flex-direction: column;
+        width: fit-content;
+      }
+
+      .Side01{
+        width: fit-content;
+      }
+
+      button{
+        display: none;
+      }
     }
 
 `

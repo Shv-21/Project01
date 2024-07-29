@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import BackgroundImage from '../../public/Image/Bike_STenger1546.jpg';
+import backgroundWidth1920 from '../../public/Image/Bike_STenger1546-width=1920.jpg';
+import backgroungWidth960 from '../../public/Image/Bike_STenger1546-width=960.jpg'
 
 const Experience = () => {
   return (
@@ -59,12 +60,13 @@ const Experience = () => {
 
 const Div = styled.div`
 
-margin-top: 140px;
-
-  background: url(${BackgroundImage}) no-repeat;
-  background-size: 155%;
-  background-position: 50% -16%;
-  min-height: 95vw;
+  margin-top: 140px;
+  background: url(${backgroundWidth1920}) no-repeat;
+  background-position: 50.5% 85%;
+  background-size: 160%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
 
   /* White bar */
@@ -73,38 +75,41 @@ margin-top: 140px;
     content: "";
     width: 95%;
     height: 35px;
+    margin-top: 5vw;
     border-radius: 5px;
     background: white;
-    position: absolute;
-    top: 80px;
-    left: 2.5%;
   }
 
   /* large text */
 
   .largeText_container{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 5.5vw;
   }
 
   h1{
     font-family: FOntAG_Extrabold;
     color: white;
-    width: fit-content;
+    width: 80%;
     text-transform: uppercase;
-    font-size: 263px;
-    line-height: 200px;
+    font-size: 16.5rem;
+    line-height: 1cap;
   }
 
   h1:nth-child(1){
-     transform: translate(125%, 100%) ;
+    text-align: center;
   }
 
   h1:nth-child(2){
-    transform: translate(22%, 100%);
+    margin-left: 30px;
   }
 
   h1:nth-child(3){
-    transform: translate(37%, 100%);
+    text-align: end;
   }
 
 /* text fragments */
@@ -120,19 +125,19 @@ margin-top: 140px;
    }
 
   .textFragment01{
-    top: 24%;
+    top: 27%;
     right: 19%;
     width: 110px;
   }
  
   .textFragment02{
-    top: 31%;
+    top: 34%;
     right: 2%;
     width: 180px;
   }
 
   .textFragment03{
-    top: 49%;
+    top: 57%;
     left: 3%;
     width: 80px;
   }
@@ -142,10 +147,10 @@ margin-top: 140px;
   .whatWeOffer{
     display: flex;
     justify-content: space-between;
-    position: absolute;
     width: 100%;
     padding-inline: 40px;
     bottom: 18%;
+    margin-block: 10vw 2vw;
   }
 
   .Description{
@@ -186,7 +191,87 @@ margin-top: 140px;
     border-left: 1px solid white;
     font-size: x-large;
     color: white;
-    padding: 7px 0 0px 110px;
+    padding: 0px 0 0px 110px;
+  }
+
+  @media (max-width: 321px) {
+    background: url(${backgroungWidth960}) no-repeat;
+    background-size: cover;
+    background-position: 50% 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 20vw;
+
+   .whiteBar{
+    height: 15px;
+    border-radius: 2px;
+    margin-top: 50px;
+   } 
+
+   h1{
+    font-size: 25vw;
+    line-height: 1cap;
+   }
+
+   .largeText_container{
+    gap: 7px;
+    width: 100%;
+    padding-inline: 10px;
+   }
+
+   h1{
+    width: 100%;
+   }
+
+   h1:nth-child(2){
+     margin-left: 0;
+     text-align: start;
+   }
+
+   h1:nth-child(3){
+    text-align: start;
+   }
+
+   .textFragment01, .textFragment02, .textFragment03{
+    display: none;
+   }
+
+   .whatWeOffer{
+    flex-direction: column-reverse;
+    position: static;
+    gap: 12vw;
+    padding: 15px;
+    margin-top: 35px;
+   }
+
+   .OurExpirties{
+    width: 100%;
+   }
+
+   .OurExpirties div{
+    border-top: 2px solid white;
+    align-items: flex-start;
+    margin-bottom: 10px;
+   }
+
+   .OurExpirties span{
+    padding: 0px 20px 0px 0px;
+   }
+
+   .OurExpirties span.first, .OurExpirties span.kuch{
+    padding-right: 20px;
+  }
+
+  .OurExpirties span.first{
+    padding-right: 21.5px;
+  }
+
+   .OurExpirties p{
+    padding: 0px 0 0px 20px;
+    font-size: 20px;
+    height: 100%;
+    border-left: 2px solid white;
+  }
   }
 
 `

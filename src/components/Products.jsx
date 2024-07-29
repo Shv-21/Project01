@@ -11,10 +11,22 @@ const Products = () => {
     <Div>
       <h1>our products</h1>
       <div className='Products'>
-        <div className="Product Product01"><button>bikes <IoArrowForwardOutline/></button></div>
-        <div className="Product Product02"><button>e-bikes <IoArrowForwardOutline/></button></div>
-        <div className="Product Product03"><button>equipment <IoArrowForwardOutline/></button></div>
-        <div className="Product Product04"><button>components & parts <IoArrowForwardOutline/></button></div>
+        <div className="Product Product01">
+          <img src={Product01} alt="" />
+          <button>bikes <IoArrowForwardOutline/></button>
+        </div>
+        <div className="Product Product02">
+          <img src={Product02} alt="" />
+          <button>e-bikes <IoArrowForwardOutline/></button>
+        </div>
+        <div className="Product Product03">
+          <img src={Product03} alt="" />
+          <button>equipment <IoArrowForwardOutline/></button>
+        </div>
+        <div className="Product Product04">
+          <img src={Product04} alt="" />
+          <button>components & parts <IoArrowForwardOutline/></button>
+        </div>
       </div>
     </Div>
   )
@@ -28,7 +40,7 @@ const Div = styled.div`
   h1{
     font-family: FontAG_Extrabold;
     text-transform: uppercase;
-    font-size: 80px;
+    font-size: 5.3vw;
   }
 
 /* below code is for product container(div.Products)  */
@@ -43,9 +55,11 @@ const Div = styled.div`
 /* Below code is for transition, size , Position of Product */
   
   .Products .Product{
-    flex-grow: 1;
+    flex: 1;
     background-size: cover;
     position: relative;
+    height: 100%;
+    width: 100%;
     background-position: 50% 0;
     transition: all .5s;
     cursor: pointer;
@@ -60,27 +74,18 @@ const Div = styled.div`
 /* And this below code Keep the hoverd Product bright */
 
   .Products .Product:hover{
-    flex-grow: 1.4;
+    flex: 1.4;
     filter: unset;
   }
 
 /* below code is for image in Product */
 
-  .Product01{
-    background: url(${Product01}) no-repeat;
+  .Product img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 
-  .Product02{
-    background: url(${Product02}) no-repeat;
-  }
-
-  .Product03{
-    background: url(${Product03}) no-repeat;
-  }
-
-  .Product04{
-    background: url(${Product04}) no-repeat;
-  }
 
   button{
     border: none;
@@ -95,6 +100,63 @@ const Div = styled.div`
     font-family: FontAG_Extrabold;
     font-size: x-large;
     bottom: -40px;
+  }
+
+  @media (max-width: 321px) {
+
+    margin-top: 100px;
+    padding-inline: 0px;
+
+    h1{
+      font-size: 13vw;
+      padding-inline: 15px;
+    }
+
+    .Products{
+      overflow-x: scroll;
+      /* overflow-y: hidden; */
+      height: 400px;
+      border-radius: unset;
+      scroll-snap-type: mandatory;
+      scroll-behavior: smooth;
+    }
+
+    .Products .Product{
+      height: 350px;
+    }
+
+    .Product:first-child{
+      padding-left: 15px;
+    }
+
+    .Product:last-child{
+      padding-right: 15px;
+    }
+
+    .Products::-webkit-scrollbar{
+      display: none;
+    }
+
+    .Product img{
+      width: 260px;
+      height: 100%;
+    }
+
+    .Products:hover .Product{
+      filter: unset;
+    }
+
+    .Products .Product:hover{
+      flex: unset;
+      filter: unset;
+    }
+    
+    button{
+      bottom: -35px;
+      padding: 0;
+      font-size: large;
+    }
+
   }
 
 `

@@ -8,15 +8,13 @@ const Collection = () => {
     <Div>
        <div className="CompoentsCollection">
          <span>Components & parts Collection</span>
-         <h1 className="Collection_Slogan">through the city with</h1>
-         <h1 className="Collection_Slogan">style and extra power</h1>
+         <h1 className="Collection_Slogan">through the city with style and extra power</h1>
          <img src={Collection01} alt="" />
          <button className="exploreCollection">explore collection <IoIosArrowRoundForward /></button>
        </div>
        <div className="GravelbikesCollection">
          <span>Gravelbikes Collection</span>
-         <h1 className="Collection_Slogan">made for endless</h1>
-         <h1 className="Collection_Slogan">adventures</h1>
+         <h1 className="Collection_Slogan">made for endless adventures</h1>
          <img src={Collection02} alt="" />
          <button className="exploreCollection">explore collection <IoIosArrowRoundForward /></button>         
        </div>
@@ -75,6 +73,32 @@ const Div = styled.div`
   .exploreCollection svg{
     scale: 1.4;
   } 
+
+  @media (max-width: 321px){
+      flex-direction: column;
+      margin-inline: 15px;
+      margin-block: 35vw 40vw; 
+      gap: 12vw;
+
+      .Collection_Slogan{
+        font-size: x-large;
+        font-family: FontAG_Extrabold;
+      }
+
+      .CompoentsCollection img, .GravelbikesCollection img{
+        height: 70vw;
+        border-radius: 5px;
+      }
+
+      .exploreCollection{
+        font-size: 16px;
+      }
+
+      .exploreCollection svg{
+        scale: 1.2;
+      }
+
+    }
 
 `
 

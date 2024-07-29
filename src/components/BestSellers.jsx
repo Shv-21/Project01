@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import cycle01 from '../../public/Image/cycle02.jpeg';
-import helmet from '../../public/Image/Helmet.jpg';
 import { MdCompareArrows } from "react-icons/md";
 
 const BestSellers = () => {
@@ -276,6 +275,38 @@ const Div =  styled.div`
       justify-content: center;
       gap: 5px;
       color: black;
+    }
+
+    @media (max-width: 321px){
+
+      margin-top: 100px;
+
+      h1{
+        font-size: 13vw;
+      }
+
+      .BestSeller_Heading{
+        flex-direction: column;
+        margin: 0;
+        gap: 0;
+        align-items: flex-start;
+        padding-inline: 15px;
+      }
+
+      .BestSelling_cycles{
+        margin-top: 15px;
+      }
+
+      .BestSelling_cycle{
+        min-width: 260px;
+      }
+      .BestSelling_cycle:first-child{
+        margin-left: 15px;
+      }
+
+      .BestSelling_cycle_buying_button{
+        display: none;
+      }
     }
 `
 

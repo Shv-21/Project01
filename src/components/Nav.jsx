@@ -54,7 +54,7 @@ const Nav = () => {
         </div>
       </div>
       <div className="MainNav">
-        <div className="Menu" onClick={()=>{if (active) { timeline.play();} else {timeline.reverse(); };active = !active; document.querySelector('.MainNav').classList.toggle("active")}} >
+        <div className="Menu" onClick={()=>{if (active) { timeline.play();} else {timeline.reverse(); };active = !active; document.getElementById('root').classList.toggle("active")}} >
            <div className="hamburger">
              <div className="menulineouter">
               <div className="menuline"></div>
@@ -339,9 +339,12 @@ const Div = styled.div`
       position: absolute;
       flex-direction: column;
       gap: 0;
-      width: 92%;
+      width: 100%;
+      height: 100vh;
       top: 100%; 
-      left: -100%;
+      background-color: white;
+      left: -105.5%;
+      padding: 15px;
       transition: left .5s ease;
       align-items: flex-start;
     }
@@ -396,10 +399,6 @@ const Div = styled.div`
       background: lightgrey;
       align-items: center;
       justify-content: space-between;
-    }
-
-    .MainNav.active .Navigation{
-      left: 0%;
     }
 
     .searchField, .icon{

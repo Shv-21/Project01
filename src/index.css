@@ -10,6 +10,14 @@
   --serviceimgvw: 14.5vw;
 }
 
+#root.active{
+   overflow: hidden;
+}
+
+#root.active .Navigation{
+  left: -5.5%;
+}
+
 ::selection {
     background-color: var(--primary-color);
     color: #fff;
