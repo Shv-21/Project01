@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Image from '../../public/Image/4Q5A9468.webp';
 import { IoIosArrowRoundForward } from "react-icons/io"; 
 import AppoinmentImage from '../../public/Image/Bike_STenger0961-tablet.jpg';
+import AppointmentImageMobile from '../../public/Image/225952-Mobile-width=small-height=small.png';
+
 
 const Findyourbike = () => {
   return (
@@ -12,31 +14,26 @@ const Findyourbike = () => {
        </svg>
        <img className="image" src={Image} alt="" />
       </div>
-      <div className="textFragment01">
+      <div className="textFragment01 textFragment">
         <div>service quality is a matter of honor</div>
       </div>
-      <div className="textFragment02">
+      <div className="textFragment02 textFragment">
         <div>your shop for bikes and e-bikes in hosbach</div>
       </div>
-      <div className="textFragment03">
+      <div className="textFragment03 textFragment">
         <div>yout journey begins here</div>
       </div>
       <div className="largeText01 largeText">find</div>
       <div className="largeText02 largeText">your</div>
       <div className="largeText03 largeText">bike</div>
       <div className="blackBar"></div>
-      <div className="Findyoutbike_Footer">
-        <div className="Findyoutbike_Slogan">
-            <p>together we</p>
-            <p>will find the</p>
-            <p>perfect product</p>
+      <div className="Findyourbike_Footer">
+        <div className="Findyourbike_Slogan">
+            <p>together we will find the perfect product</p>
         </div>
         <div className="Findyourbike_discription">
             <div className="passageBlock">
-              <p>Our experts at Stenger are bike enthusiasts</p>
-              <p>themselves. We know exactly how important it is to</p>
-              <p>have the perfect equipment to enjoy cycling to the</p>
-              <p>fullest.</p>
+              <p>Our experts at Stenger are bike enthusiasts themselves. We know exactly how important it is to have the perfect equipment to enjoy cycling to the fullest.</p>
             </div>
             <div className="AppointmentBlock">
                 <img className="AppointmentBlock_Image" src={AppoinmentImage} alt="" />
@@ -61,14 +58,14 @@ const Div = styled.div`
    
   /* imageEffect */
 
-  .imageEffect svg{
-    width: 831px;
-    height: 971px;
-    color: #e8e5e5; 
-  }
-
   .imageEffect{
    position: relative;
+  }
+
+  .imageEffect svg{
+    width: 54.5vw;
+    height: 63.5vw;
+    color: #e8e5e5; 
   }
 
   .image{
@@ -84,7 +81,7 @@ const Div = styled.div`
 
   .largeText{
     color: black;
-    font-size: 175px;
+    font-size: 11rem;
     font-family: FontAG_Extrabold;
     text-transform: uppercase;
     position: absolute;
@@ -107,8 +104,7 @@ const Div = styled.div`
 
    /* textfragments */
 
-
-  .textFragment01 , .textFragment02 , .textFragment03{
+ .textFragment{
     color: black;
     font-size: x-small;
     font-family: FontNG_Hel;
@@ -149,31 +145,31 @@ const Div = styled.div`
     left: 3%;
   }
 
-  /* Findyoutbike_Slogan */
+  /* Findyourbike_Slogan */
 
-  .Findyoutbike_Slogan{
+  .Findyourbike_Slogan{
     position: absolute;
     top: 70%;
   }
 
-  /* Findyoutbike_Footer */
+  /* Findyourbike_Footer */
 
-  .Findyoutbike_Footer{
+  .Findyourbike_Footer{
     width: 100%;
     padding: 0 45px;
     margin-top: 35px;
   }
 
-  .Findyoutbike_Footer h2{
+  .Findyourbike_Footer h2{
     padding-right: 100px;
   }
 
-  .Findyoutbike_Footer p{
+  .Findyourbike_Footer p{
     line-height: 1.3cap;
     font-size: 37px;
   }
 
-  .Findyoutbike_Footer :is(h2,p){
+  .Findyourbike_Footer :is(h2,p){
     color: black;
     font-family:FontAG_Extrabold; 
     text-transform: uppercase;
@@ -231,7 +227,7 @@ const Div = styled.div`
 
   .AppointmentBlock_Image{
     border-radius: 3px;
-    width: 350px;
+    width: 51%;
   }
 
   .AppointmentBlock_Button{
@@ -239,6 +235,93 @@ const Div = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+  }
+
+  @media (max-width: 321px){
+    .textFragment{
+      display: none;
+    }
+
+    .imageEffect svg{
+     width: 87vw;
+     height: 107vw;
+     color: #e8e5e5; 
+  }
+
+   .largeText{
+     font-size: 3.5rem;
+   }
+
+  .largeText01{
+    top: -1.5%;
+    left:4%
+  }
+
+  .largeText02{
+    top: 3.7%;
+    left: 12%;
+  }
+
+  .largeText03{
+    top: 15%;
+    right:4.5%; 
+  }
+
+  .blackBar{
+    height: 12px;
+    border-radius: 3px;
+    top: 35.5%;
+  }
+
+  .Findyourbike_Slogan{
+    position: unset;
+    width: 70%;
+    margin-bottom: 20px;
+  }
+
+  .Findyourbike_Slogan p{
+    line-height: 1.2cap;
+    font-size: x-large;
+  }
+
+  .Findyourbike_discription{
+    gap: 40px
+  }
+
+  .Findyourbike_Footer{
+    padding: 0 15px;
+  }
+
+  .passageBlock{
+    border: unset;
+    padding: 0;
+  }
+
+  .Findyourbike_discription, .AppointmentBlock{
+    flex-direction: column;
+    padding:0;
+    border: unset;
+  }
+
+  .passageBlock p{
+    line-height: 1.8cap;
+    color: black;
+  }
+
+  .AppointmentBlock, .AppointmentBlock_Button{
+    gap: 30px;
+  }
+
+  .AppointmentBlock_Image{
+    content: url(${AppointmentImageMobile});
+    width: 100%
+  }
+
+  .Findyourbike_Footer h2{
+    padding-right: 0px;
+    line-height: 1.2cap;
+  }
+
   }
 
 `

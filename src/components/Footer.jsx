@@ -11,7 +11,7 @@ export const Footer = () => {
     <Div>
       <Login/>
       <div className="Footer_Menu">
-        <div className="box footerShop">
+        <div className="box footerShop" id='footerShop'>
             <h1>shop</h1>
             <h1>all brands</h1>
             <h1>services</h1>
@@ -271,6 +271,78 @@ const Div = styled.div`
 
   a{
     color: white;
+  }
+
+  @media (max-width: 321px){
+
+    padding-top: 30vw;
+    
+
+    .Footer_Menu{
+      display: grid;
+      margin-inline: 15px;
+      grid-template-areas: "box1 box1"
+                           "box3 box4"
+                           "box5 box6";
+    }
+
+    .box{
+      padding-left: 0; 
+      border: unset;
+      border-bottom: 1px solid grey;
+    }
+
+    .Footer_Menu .box{
+      width: 146px;
+    }
+
+    .footerBlog{
+      border-right: 1px solid grey;
+    }
+
+    .footerAbout{
+      padding-left: 15px;
+    }
+
+    .footerAbout li{
+      width: 80%;
+    }
+
+    .footerShop{
+      grid-area: box1;
+    }
+
+    .footerSupport{
+      border-right: 1px solid grey;
+      border-left: unset;
+      padding-top: 10vw;
+      border-bottom: unset;
+    }
+
+    .contact, .FooterEnd{
+      flex-direction: column;
+    }
+
+    .contact .storeLocation {
+      padding-bottom: 0px;
+    }
+
+    .storeLocation .contactButton{
+      width: 50vw;
+      margin-top: 10px;
+    }
+
+   .storeTime div:nth-child(3){
+    width: 100vw;
+    margin-top: 5px;
+    align-items: center;
+   }
+
+   .contact .box{
+    border: unset;
+   }
+
+
   }
   
 `

@@ -30,10 +30,10 @@ const Router = createBrowserRouter([{
              <Experience/>
              <Collection/>
              <HighLight/>
-             {/* <Findyourbike/>
+             <Findyourbike/>
              <Service/>
              <Statistic/>
-             <Footer/> */}
+             <Footer/>
            </div>
 }])
 

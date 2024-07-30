@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import image from '../../public/Image/4Q5A8906-desktop.webp';
+import imageMobile from '../../public/Image/4Q5A8906-mobile.jpg'
 import { IoIosArrowRoundForward } from "react-icons/io"; 
 
 const Service = () => {
@@ -51,11 +52,15 @@ const Div = styled.div`
 
   /* intro img */
 
+  .largeText{
+    position: relative;
+  }
+
   img{
     width: var(--serviceimgvw);
     height: 8.5vw;
     position: absolute;
-    top: .6vw;
+    top: 0;
     left: 0;
     object-fit: cover;
   }
@@ -127,7 +132,54 @@ const Div = styled.div`
     font: x-large FontAG_Extrabold;
   }
 
+  @media (max-width: 321px) {
 
+    margin-inline: 15px;
+    margin-top: 70px;
+
+    .serviceFooter{
+      flex-direction: column;
+      gap: 12vw;
+    }
+
+    .blackBar{
+     height: 12px;
+     position: unset;
+     margin-bottom: 15vw;
+     border-radius: 3px;
+    }
+
+    .largeText img{
+      content: url(${imageMobile});
+      height: 20%;
+      top: 2%;
+    }
+
+    .text{
+      font-size: 17vw;
+    }
+
+    .serviceFooter{
+      margin-top: 10vw;
+    }
+
+    .type{
+      gap: 15px;
+      height: fit-content;
+      padding-block: 12px;
+    }
+
+    .type span{
+      font-size: 20px;
+      line-height: 1cap;
+    }
+
+    .type svg{
+      margin: 0px;
+      margin-left: 10px;
+    }
+
+}
 `
 
 export default Service

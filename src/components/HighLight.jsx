@@ -110,22 +110,24 @@ const Div = styled.div`
 
       .hightLight_Poster{
         left: 0%;  
-        top: 10%;
+        top: 75%;
         flex-direction: row-reverse;
         width: 90%;
         justify-content: space-around;
+        align-items: flex-start;
         height: 32.5vw;
-        padding: 15px;
+        padding: .9rem;
         margin-inline: 15px;
-        gap: 20px;
+        gap: .9rem;
       }
 
       .Poster_Detail::before{
-        display: none;
+        top: -45%;
+        font-size: x-large;
       }
 
       .hightLight_Poster img{
-        width: fit-content;
+        flex: 1;
         height: 100%;
         border: 1px solid rgb(225, 223, 223);
         border-radius: 2px;
@@ -138,7 +140,7 @@ const Div = styled.div`
 
       .Poster_Detail{
         flex-direction: column;
-        width: fit-content;
+        flex: 3;
       }
 
       .Side01{

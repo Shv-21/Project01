@@ -89,4 +89,27 @@ const Div = styled.div`
         top:0px;
         background: none;
     }
+
+    @media (max-width: 321px) {
+        margin: 0;
+        padding: 15px 15px 50px 15px;
+        border-radius: unset;
+
+        h6:nth-child(3){
+            display: none;
+         margin-right: 0px;
+        }
+
+        h6:nth-child(2){
+          margin-right: 70px;
+        }
+
+        button, input{
+            font-size: 2.5rem;
+        }
+
+        .inputField::after{
+            height: 2.3vw;
+        }
+    }
 `
